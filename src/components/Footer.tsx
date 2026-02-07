@@ -1,4 +1,6 @@
-import { Leaf, Github, Twitter, Mail } from "lucide-react";
+import { Github, Linkedin, Mail } from "lucide-react";
+import { Link } from "react-router-dom";
+import logo from "@/assets/logo.png";
 
 export function Footer() {
   return (
@@ -7,33 +9,36 @@ export function Footer() {
         <div className="grid md:grid-cols-4 gap-8 mb-12">
           {/* Brand */}
           <div className="md:col-span-2">
-            <a href="/" className="flex items-center gap-2 mb-4">
-              <div className="flex h-10 w-10 items-center justify-center rounded-xl bg-white">
-                <Leaf className="h-5 w-5 text-primary" />
-              </div>
+            <Link to="/" className="flex items-center gap-2.5 mb-4">
+              <img src={logo} alt="Project A.D.I.T.I. logo" className="h-10 w-10 rounded-lg object-contain" />
               <span className="text-xl font-bold text-white">
-                Plant<span className="text-accent">Doc</span>
+                Project <span className="text-accent">A.D.I.T.I.</span>
               </span>
-            </a>
+            </Link>
             <p className="text-white/80 max-w-md mb-4">
+              Agricultural Disease Inference via Temporal Intelligence — 
               Plant Disease Detection using Spiking Neural Networks with Cython Optimization.
-              A B.Tech Capstone Project focused on empowering Indian smallholder farmers.
+              A B.Tech Capstone Project by Shubham Pandey.
             </p>
             <div className="flex gap-3">
               <a
-                href="https://github.com"
+                href="https://github.com/ShubhamP1028"
+                target="_blank"
+                rel="noopener noreferrer"
                 className="w-10 h-10 rounded-lg bg-white/10 flex items-center justify-center text-white/80 hover:text-white hover:bg-white/20 transition-all"
               >
                 <Github className="h-5 w-5" />
               </a>
               <a
-                href="https://twitter.com"
+                href="https://www.linkedin.com/in/shubham1028/"
+                target="_blank"
+                rel="noopener noreferrer"
                 className="w-10 h-10 rounded-lg bg-white/10 flex items-center justify-center text-white/80 hover:text-white hover:bg-white/20 transition-all"
               >
-                <Twitter className="h-5 w-5" />
+                <Linkedin className="h-5 w-5" />
               </a>
               <a
-                href="mailto:contact@plantdoc.ai"
+                href="mailto:shubham30p@gmail.com"
                 className="w-10 h-10 rounded-lg bg-white/10 flex items-center justify-center text-white/80 hover:text-white hover:bg-white/20 transition-all"
               >
                 <Mail className="h-5 w-5" />
@@ -43,34 +48,34 @@ export function Footer() {
 
           {/* Links */}
           <div>
-            <h4 className="font-bold text-white mb-4">Product</h4>
+            <h4 className="font-bold text-white mb-4">Platform</h4>
             <ul className="space-y-2">
-              <li><a href="#features" className="text-white/70 hover:text-white transition-colors">Features</a></li>
-              <li><a href="#how-it-works" className="text-white/70 hover:text-white transition-colors">How It Works</a></li>
-              <li><a href="#diseases" className="text-white/70 hover:text-white transition-colors">Disease Library</a></li>
-              <li><a href="#" className="text-white/70 hover:text-white transition-colors">API Access</a></li>
+              <li><Link to="/#features" className="text-white/70 hover:text-white transition-colors">Scan Plant</Link></li>
+              <li><Link to="/workflow" className="text-white/70 hover:text-white transition-colors">Workflow</Link></li>
+              <li><Link to="/#diseases" className="text-white/70 hover:text-white transition-colors">Disease Library</Link></li>
+              <li><Link to="/references" className="text-white/70 hover:text-white transition-colors">References</Link></li>
             </ul>
           </div>
 
           <div>
-            <h4 className="font-bold text-white mb-4">Research</h4>
+            <h4 className="font-bold text-white mb-4">Project</h4>
             <ul className="space-y-2">
-              <li><a href="#" className="text-white/70 hover:text-white transition-colors">Technical Paper</a></li>
-              <li><a href="#" className="text-white/70 hover:text-white transition-colors">GitHub Repo</a></li>
-              <li><a href="#" className="text-white/70 hover:text-white transition-colors">PlantVillage Dataset</a></li>
-              <li><a href="#" className="text-white/70 hover:text-white transition-colors">SNN Resources</a></li>
+              <li><Link to="/about" className="text-white/70 hover:text-white transition-colors">About Us</Link></li>
+              <li><a href="https://github.com/ShubhamP1028" target="_blank" rel="noopener noreferrer" className="text-white/70 hover:text-white transition-colors">GitHub Repo</a></li>
+              <li><Link to="/references" className="text-white/70 hover:text-white transition-colors">Research Papers</Link></li>
+              <li><a href="mailto:shubham30p@gmail.com" className="text-white/70 hover:text-white transition-colors">Contact</a></li>
             </ul>
           </div>
         </div>
 
         <div className="pt-8 border-t border-white/10 flex flex-col md:flex-row justify-between items-center gap-4">
           <p className="text-white/70 text-sm">
-            © 2026 PlantDoc. Built by Shubham Pandey. B.Tech Capstone Project.
+            © 2026 Project A.D.I.T.I. Built by Shubham Pandey. B.Tech Capstone Project.
           </p>
           <div className="flex gap-6 text-sm">
-            <a href="#" className="text-white/70 hover:text-white transition-colors">Privacy</a>
-            <a href="#" className="text-white/70 hover:text-white transition-colors">Terms</a>
-            <a href="#" className="text-white/70 hover:text-white transition-colors">Contact</a>
+            <a href="mailto:shubham30p@gmail.com" className="text-white/70 hover:text-white transition-colors">Contact</a>
+            <Link to="/about" className="text-white/70 hover:text-white transition-colors">About</Link>
+            <Link to="/references" className="text-white/70 hover:text-white transition-colors">References</Link>
           </div>
         </div>
       </div>
