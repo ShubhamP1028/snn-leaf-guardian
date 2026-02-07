@@ -20,12 +20,11 @@ export function HeroSection() {
           alt="Lush green crops"
           className="w-full h-full object-cover"
         />
-        {/* Dark gradient overlay for text readability */}
         <div className="absolute inset-0 bg-gradient-to-b from-black/70 via-black/50 to-black/30" />
         <div className="absolute inset-0 bg-gradient-to-r from-primary/40 to-transparent" />
       </div>
 
-      {/* Floating Elements - Accent colored */}
+      {/* Floating Elements */}
       <div className="absolute inset-0 z-10 overflow-hidden pointer-events-none">
         {[...Array(6)].map((_, i) => (
           <motion.div
@@ -65,26 +64,39 @@ export function HeroSection() {
             </span>
           </motion.div>
 
-          {/* Headline - White text */}
+          {/* Project Name */}
+          <motion.div
+            initial={{ opacity: 0, y: 30 }}
+            animate={{ opacity: 1, y: 0 }}
+            transition={{ duration: 0.6, delay: 0.05 }}
+            className="mb-3"
+          >
+            <span className="text-accent font-mono text-sm md:text-base tracking-widest uppercase">
+              Project A.D.I.T.I.
+            </span>
+          </motion.div>
+
+          {/* Full Form Name */}
           <motion.h1
             initial={{ opacity: 0, y: 30 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.6, delay: 0.1 }}
-            className="text-4xl md:text-5xl lg:text-7xl font-bold text-white leading-tight mb-6"
+            className="text-4xl md:text-5xl lg:text-7xl font-bold text-white leading-tight mb-4"
           >
-            Detect Plant Diseases{" "}
+            Agricultural Disease{" "}
             <span className="relative inline-block">
-              <span className="text-accent">Instantly</span>
+              <span className="text-accent">Inference</span>
               <motion.span
                 className="absolute -bottom-2 left-0 right-0 h-1 bg-accent rounded-full"
                 initial={{ scaleX: 0 }}
                 animate={{ scaleX: 1 }}
                 transition={{ duration: 0.6, delay: 0.8 }}
               />
-            </span>
+            </span>{" "}
+            via Temporal Intelligence
           </motion.h1>
 
-          {/* Subtitle - White text */}
+          {/* Subtitle */}
           <motion.p
             initial={{ opacity: 0, y: 30 }}
             animate={{ opacity: 1, y: 0 }}
@@ -96,7 +108,7 @@ export function HeroSection() {
             instant results, and local language support.
           </motion.p>
 
-          {/* CTA Buttons - Accent colored primary CTA */}
+          {/* CTA Buttons */}
           <motion.div
             initial={{ opacity: 0, y: 30 }}
             animate={{ opacity: 1, y: 0 }}
@@ -135,7 +147,7 @@ export function HeroSection() {
           </motion.div>
         </div>
 
-        {/* Stats Bar - White cards with shadow */}
+        {/* Stats Bar */}
         <motion.div
           initial={{ opacity: 0, y: 40 }}
           animate={{ opacity: 1, y: 0 }}
