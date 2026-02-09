@@ -83,7 +83,7 @@ const Workflow = () => {
               Technical Workflow
             </span>
             <h1 className="text-4xl md:text-5xl font-bold text-foreground mb-6">
-              How Project A.D.I.T.I. Works
+              How Project ADITI Works
             </h1>
             <p className="text-lg text-muted-foreground leading-relaxed">
               From a simple leaf photo to an accurate disease diagnosis in under 10 milliseconds — 

@@ -1,48 +1,40 @@
 import { motion } from "framer-motion";
-import { ArrowRight, Zap, Wifi, Shield, Camera } from "lucide-react";
+import { ArrowRight } from "lucide-react";
 import { Button } from "@/components/ui/button";
 import heroBg from "@/assets/hero-bg.jpg";
-
-const stats = [
-  { value: "38+", label: "Disease Classes" },
-  { value: "<10ms", label: "Inference Time" },
-  { value: "95%+", label: "Accuracy" },
-  { value: "10x", label: "Energy Efficient" },
-];
 
 export function HeroSection() {
   return (
     <section className="relative min-h-screen flex items-center overflow-hidden">
-      {/* Background Image with Dark Overlay */}
+      {/* Background Image with Dark Navy Overlay */}
       <div className="absolute inset-0 z-0">
         <img
           src={heroBg}
-          alt="Lush green crops"
+          alt="AI-powered agricultural technology"
           className="w-full h-full object-cover"
         />
-        <div className="absolute inset-0 bg-gradient-to-b from-black/70 via-black/50 to-black/30" />
-        <div className="absolute inset-0 bg-gradient-to-r from-primary/40 to-transparent" />
+        <div className="absolute inset-0 hero-gradient-overlay" />
       </div>
 
-      {/* Floating Elements */}
+      {/* Subtle floating particles */}
       <div className="absolute inset-0 z-10 overflow-hidden pointer-events-none">
-        {[...Array(6)].map((_, i) => (
+        {[...Array(8)].map((_, i) => (
           <motion.div
             key={i}
-            className="absolute w-2 h-2 rounded-full bg-accent/60"
+            className="absolute w-1 h-1 rounded-full bg-accent/40"
             style={{
-              left: `${15 + i * 15}%`,
-              top: `${20 + (i % 3) * 25}%`,
+              left: `${10 + i * 12}%`,
+              top: `${15 + (i % 4) * 20}%`,
             }}
             animate={{
-              y: [0, -20, 0],
-              opacity: [0.3, 0.8, 0.3],
+              y: [0, -30, 0],
+              opacity: [0.2, 0.6, 0.2],
             }}
             transition={{
-              duration: 3 + i * 0.5,
+              duration: 4 + i * 0.5,
               repeat: Infinity,
               ease: "easeInOut",
-              delay: i * 0.3,
+              delay: i * 0.4,
             }}
           />
         ))}
@@ -50,127 +42,60 @@ export function HeroSection() {
 
       {/* Content */}
       <div className="relative z-20 container mx-auto px-4 pt-32 pb-20">
-        <div className="max-w-4xl">
-          {/* Badge */}
-          <motion.div
-            initial={{ opacity: 0, y: 20 }}
-            animate={{ opacity: 1, y: 0 }}
-            transition={{ duration: 0.6 }}
-            className="inline-flex items-center gap-2 px-4 py-2 rounded-full bg-white/10 border border-white/20 backdrop-blur-sm mb-6"
-          >
-            <Zap className="h-4 w-4 text-accent" />
-            <span className="text-white/90 text-sm font-medium">
-              Powered by Spiking Neural Networks
-            </span>
-          </motion.div>
-
-          {/* Project Name */}
-          <motion.div
-            initial={{ opacity: 0, y: 30 }}
-            animate={{ opacity: 1, y: 0 }}
-            transition={{ duration: 0.6, delay: 0.05 }}
-            className="mb-3"
-          >
-            <span className="text-accent font-mono text-sm md:text-base tracking-widest uppercase">
-              Project A.D.I.T.I.
-            </span>
-          </motion.div>
-
-          {/* Full Form Name */}
+        <div className="max-w-5xl">
+          {/* Main Headline */}
           <motion.h1
-            initial={{ opacity: 0, y: 30 }}
+            initial={{ opacity: 0, y: 40 }}
             animate={{ opacity: 1, y: 0 }}
-            transition={{ duration: 0.6, delay: 0.1 }}
-            className="text-4xl md:text-5xl lg:text-7xl font-bold text-white leading-tight mb-4"
+            transition={{ duration: 0.7, delay: 0.1 }}
+            className="text-5xl md:text-6xl lg:text-8xl font-extrabold text-white leading-[1.05] tracking-tight mb-6"
           >
             Agricultural Disease{" "}
-            <span className="relative inline-block">
-              <span className="text-accent">Inference</span>
-              <motion.span
-                className="absolute -bottom-2 left-0 right-0 h-1 bg-accent rounded-full"
-                initial={{ scaleX: 0 }}
-                animate={{ scaleX: 1 }}
-                transition={{ duration: 0.6, delay: 0.8 }}
-              />
-            </span>{" "}
+            <span className="gradient-text-cyan">Inference</span>
+            <br />
             via Temporal Intelligence
           </motion.h1>
 
-          {/* Subtitle */}
+          {/* Project Name */}
           <motion.p
             initial={{ opacity: 0, y: 30 }}
             animate={{ opacity: 1, y: 0 }}
-            transition={{ duration: 0.6, delay: 0.2 }}
-            className="text-lg md:text-xl text-white/80 max-w-2xl mb-8 leading-relaxed"
+            transition={{ duration: 0.6, delay: 0.25 }}
+            className="text-xl md:text-2xl text-white/70 font-medium mb-8"
           >
-            Revolutionary AI-powered plant disease detection using next-gen neural networks.
-            Designed for 120M+ Indian smallholder farmers with offline capability, 
-            instant results, and local language support.
+            Project <span className="text-accent font-bold">ADITI</span>
           </motion.p>
 
-          {/* CTA Buttons */}
+          {/* Description */}
+          <motion.p
+            initial={{ opacity: 0, y: 30 }}
+            animate={{ opacity: 1, y: 0 }}
+            transition={{ duration: 0.6, delay: 0.35 }}
+            className="text-base md:text-lg text-white/60 max-w-xl mb-10 leading-relaxed"
+          >
+            Unlock the potential of temporal data with cutting-edge SNN
+            algorithms designed for real-world agricultural applications.
+          </motion.p>
+
+          {/* CTA */}
           <motion.div
             initial={{ opacity: 0, y: 30 }}
             animate={{ opacity: 1, y: 0 }}
-            transition={{ duration: 0.6, delay: 0.3 }}
-            className="flex flex-wrap gap-4 mb-12"
+            transition={{ duration: 0.6, delay: 0.45 }}
+            className="flex flex-wrap items-center gap-6"
           >
+            <a
+              href="#features"
+              className="text-accent hover:text-accent/80 text-sm font-medium underline underline-offset-4 transition-colors"
+            >
+              Learn More
+            </a>
             <Button variant="hero" size="xl">
-              <Camera className="h-5 w-5 mr-2" />
-              Scan Your Plant
+              Get Started
               <ArrowRight className="h-5 w-5 ml-2" />
             </Button>
-            <Button variant="hero-outline" size="xl">
-              Learn More
-            </Button>
-          </motion.div>
-
-          {/* Feature Pills */}
-          <motion.div
-            initial={{ opacity: 0, y: 30 }}
-            animate={{ opacity: 1, y: 0 }}
-            transition={{ duration: 0.6, delay: 0.4 }}
-            className="flex flex-wrap gap-3"
-          >
-            <div className="flex items-center gap-2 px-4 py-2 rounded-full bg-white/10 backdrop-blur-sm border border-white/20">
-              <Wifi className="h-4 w-4 text-accent" />
-              <span className="text-white/90 text-sm">Works Offline</span>
-            </div>
-            <div className="flex items-center gap-2 px-4 py-2 rounded-full bg-white/10 backdrop-blur-sm border border-white/20">
-              <Zap className="h-4 w-4 text-accent" />
-              <span className="text-white/90 text-sm">Edge-Ready</span>
-            </div>
-            <div className="flex items-center gap-2 px-4 py-2 rounded-full bg-white/10 backdrop-blur-sm border border-white/20">
-              <Shield className="h-4 w-4 text-accent" />
-              <span className="text-white/90 text-sm">Privacy First</span>
-            </div>
           </motion.div>
         </div>
-
-        {/* Stats Bar */}
-        <motion.div
-          initial={{ opacity: 0, y: 40 }}
-          animate={{ opacity: 1, y: 0 }}
-          transition={{ duration: 0.6, delay: 0.6 }}
-          className="mt-16 grid grid-cols-2 md:grid-cols-4 gap-4"
-        >
-          {stats.map((stat, index) => (
-            <motion.div
-              key={stat.label}
-              initial={{ opacity: 0, scale: 0.9 }}
-              animate={{ opacity: 1, scale: 1 }}
-              transition={{ duration: 0.4, delay: 0.7 + index * 0.1 }}
-              className="rounded-2xl p-6 text-center bg-white/95 backdrop-blur-xl shadow-lg"
-            >
-              <div className="font-mono text-3xl md:text-4xl font-bold text-accent mb-1">
-                {stat.value}
-              </div>
-              <div className="text-foreground/70 text-sm font-medium">
-                {stat.label}
-              </div>
-            </motion.div>
-          ))}
-        </motion.div>
       </div>
     </section>
   );

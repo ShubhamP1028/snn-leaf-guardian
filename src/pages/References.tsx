@@ -127,7 +127,7 @@ const References = () => {
               References
             </h1>
             <p className="text-lg text-muted-foreground leading-relaxed">
-              Research papers, datasets, frameworks, and tools that power Project A.D.I.T.I. — 
+              Research papers, datasets, frameworks, and tools that power Project ADITI — 
               curated for academic integrity and reproducibility.
             </p>
           </motion.div>

@@ -60,7 +60,7 @@ const AboutUs = () => {
               About Us
             </h1>
             <p className="text-lg text-muted-foreground leading-relaxed">
-              We're B.Tech students building Project A.D.I.T.I. as our capstone project — 
+              We're B.Tech students building Project ADITI as our capstone project — 
               combining Spiking Neural Networks with practical agricultural deployment to make 
               a real difference for Indian farmers.
             </p>
@@ -101,7 +101,7 @@ const AboutUs = () => {
               className="text-center mb-12"
             >
               <h2 className="text-3xl font-bold text-foreground mb-4">Meet the Team</h2>
-              <p className="text-muted-foreground">The people behind Project A.D.I.T.I.</p>
+              <p className="text-muted-foreground">The people behind Project ADITI</p>
             </motion.div>
 
             <div className="grid md:grid-cols-2 gap-8 max-w-4xl mx-auto">
@@ -167,7 +167,7 @@ const AboutUs = () => {
             >
               <h2 className="text-3xl font-bold text-white mb-4">B.Tech Capstone Project</h2>
               <p className="text-white/80 mb-6">
-                Project A.D.I.T.I. — Agricultural Disease Inference via Temporal Intelligence — 
+                Project ADITI — Agricultural Disease Inference via Temporal Intelligence — 
                 is our final year capstone project focused on leveraging third-generation neural 
                 networks for practical agricultural impact.
               </p>

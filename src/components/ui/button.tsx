@@ -19,7 +19,7 @@ const buttonVariants = cva(
         ghost: "hover:bg-accent/10 hover:text-accent",
         link: "text-accent underline-offset-4 hover:underline",
         // Hero CTA - Dodger Blue with Deep Forest text
-        hero: "bg-accent text-primary font-bold shadow-lg hover:shadow-xl hover:scale-105 active:scale-100",
+        hero: "bg-primary text-primary-foreground font-bold border border-accent/30 shadow-lg hover:shadow-xl hover:scale-105 active:scale-100",
         "hero-outline": "border-2 border-white/30 bg-white/10 text-white backdrop-blur-sm hover:bg-white/20 hover:border-white/50",
         success: "bg-success text-success-foreground hover:bg-success/90 shadow-md",
       },

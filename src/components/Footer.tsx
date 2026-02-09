@@ -10,9 +10,9 @@ export function Footer() {
           {/* Brand */}
           <div className="md:col-span-2">
             <Link to="/" className="flex items-center gap-2.5 mb-4">
-              <img src={logo} alt="Project A.D.I.T.I. logo" className="h-10 w-10 rounded-lg object-contain" />
+              <img src={logo} alt="Project ADITI logo" className="h-10 w-10 rounded-lg object-contain" />
               <span className="text-xl font-bold text-white">
-                Project <span className="text-accent">A.D.I.T.I.</span>
+                Project <span className="text-accent">ADITI</span>
               </span>
             </Link>
             <p className="text-white/80 max-w-md mb-4">
@@ -70,7 +70,7 @@ export function Footer() {
 
         <div className="pt-8 border-t border-white/10 flex flex-col md:flex-row justify-between items-center gap-4">
           <p className="text-white/70 text-sm">
-            © 2026 Project A.D.I.T.I. Built by Shubham Pandey. B.Tech Capstone Project.
+            © 2026 Project ADITI. Built by Shubham Pandey. B.Tech Capstone Project.
           </p>
           <div className="flex gap-6 text-sm">
             <a href="mailto:shubham30p@gmail.com" className="text-white/70 hover:text-white transition-colors">Contact</a>

@@ -45,9 +45,9 @@ export function Header() {
         <div className="flex items-center justify-between">
           {/* Logo */}
           <Link to="/" className="flex items-center gap-2.5">
-            <img src={logo} alt="Project A.D.I.T.I. logo" className="h-9 w-9 rounded-lg object-contain" />
+            <img src={logo} alt="Project ADITI logo" className="h-9 w-9 rounded-lg object-contain" />
             <span className="text-lg font-bold text-foreground tracking-tight">
-              Project <span className="text-accent">A.D.I.T.I.</span>
+              Project <span className="text-accent">ADITI</span>
             </span>
           </Link>
 
