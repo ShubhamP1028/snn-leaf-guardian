@@ -18,7 +18,6 @@ export function Footer() {
             <p className="text-white/80 max-w-md mb-4">
               Agricultural Disease Inference via Temporal Intelligence — 
               Plant Disease Detection using Spiking Neural Networks with Cython Optimization.
-              A B.Tech Capstone Project by Shubham Pandey.
             </p>
             <div className="flex gap-3">
               <a
@@ -70,12 +69,10 @@ export function Footer() {
 
         <div className="pt-8 border-t border-white/10 flex flex-col md:flex-row justify-between items-center gap-4">
           <p className="text-white/70 text-sm">
-            © 2026 Project ADITI. Built by Shubham Pandey. B.Tech Capstone Project.
+            © 2026 Project ADITI. Built by Shubham.
           </p>
           <div className="flex gap-6 text-sm">
-            <a href="mailto:shubham30p@gmail.com" className="text-white/70 hover:text-white transition-colors">Contact</a>
-            <Link to="/about" className="text-white/70 hover:text-white transition-colors">About</Link>
-            <Link to="/references" className="text-white/70 hover:text-white transition-colors">References</Link>
+            <a href="https://linkedin.com/in/shubham1028" className="text-white/90 hover:text-white transition-colors">LinkedIn</a>
           </div>
         </div>
       </div>

@@ -43,6 +43,15 @@ export function HeroSection() {
       {/* Content */}
       <div className="relative z-20 container mx-auto px-4 pt-32 pb-20">
         <div className="max-w-5xl">
+          {/* Project Name */}
+          <motion.p
+            initial={{ opacity: 0, y: 30 }}
+            animate={{ opacity: 1, y: 0 }}
+            transition={{ duration: 0.6, delay: 0.25 }}
+            className="text-xl md:text-2xl text-white/70 font-medium mb-8 ml-[55%]"
+          >
+            Project <span className="text-accent font-bold">ADITI</span>
+          </motion.p>
           {/* Main Headline */}
           <motion.h1
             initial={{ opacity: 0, y: 40 }}
@@ -51,20 +60,14 @@ export function HeroSection() {
             className="text-5xl md:text-6xl lg:text-8xl font-extrabold text-white leading-[1.05] tracking-tight mb-6"
           >
             Agricultural Disease{" "}
-            <span className="gradient-text-cyan">Inference</span>
+            Inference 
             <br />
-            via Temporal Intelligence
+            via
+            <br />
+            
+            <span className="gradient-text-cyan">Temporal <br /> Intelligence</span>
           </motion.h1>
 
-          {/* Project Name */}
-          <motion.p
-            initial={{ opacity: 0, y: 30 }}
-            animate={{ opacity: 1, y: 0 }}
-            transition={{ duration: 0.6, delay: 0.25 }}
-            className="text-xl md:text-2xl text-white/70 font-medium mb-8"
-          >
-            Project <span className="text-accent font-bold">ADITI</span>
-          </motion.p>
 
           {/* Description */}
           <motion.p
@@ -73,8 +76,7 @@ export function HeroSection() {
             transition={{ duration: 0.6, delay: 0.35 }}
             className="text-base md:text-lg text-white/60 max-w-xl mb-10 leading-relaxed"
           >
-            Unlock the potential of temporal data with cutting-edge SNN
-            algorithms designed for real-world agricultural applications.
+            Plant Disease Detection using SNN based image classification.
           </motion.p>
 
           {/* CTA */}
@@ -84,14 +86,14 @@ export function HeroSection() {
             transition={{ duration: 0.6, delay: 0.45 }}
             className="flex flex-wrap items-center gap-6"
           >
-            <a
-              href="#features"
-              className="text-accent hover:text-accent/80 text-sm font-medium underline underline-offset-4 transition-colors"
-            >
-              Learn More
-            </a>
+            
             <Button variant="hero" size="xl">
+              <a
+              href="#features"
+              className="text-accent hover:text-accent/80 text-sm font-medium transition-colors"
+            >
               Get Started
+            </a>
               <ArrowRight className="h-5 w-5 ml-2" />
             </Button>
           </motion.div>
