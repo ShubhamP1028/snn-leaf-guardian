@@ -2,7 +2,7 @@
  import { HeroSection } from "@/components/HeroSection";
  import { ImageUploader } from "@/components/ImageUploader";
  import { HowItWorks } from "@/components/HowItWorks";
- import { DiseaseLibrary } from "@/components/DiseaseLibrary";
+ 
  import { ImpactSection } from "@/components/ImpactSection";
  import { Footer } from "@/components/Footer";
  
@@ -14,7 +14,7 @@
          <HeroSection />
          <ImageUploader />
          <HowItWorks />
-         <DiseaseLibrary />
+         
          <ImpactSection />
        </main>
        <Footer />

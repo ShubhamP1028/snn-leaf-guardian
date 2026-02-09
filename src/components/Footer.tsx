@@ -52,7 +52,7 @@ export function Footer() {
             <ul className="space-y-2">
               <li><Link to="/#features" className="text-white/70 hover:text-white transition-colors">Scan Plant</Link></li>
               <li><Link to="/workflow" className="text-white/70 hover:text-white transition-colors">Workflow</Link></li>
-              <li><Link to="/#diseases" className="text-white/70 hover:text-white transition-colors">Disease Library</Link></li>
+              <li><Link to="/diseases" className="text-white/70 hover:text-white transition-colors">Disease Library</Link></li>
               <li><Link to="/references" className="text-white/70 hover:text-white transition-colors">References</Link></li>
             </ul>
           </div>

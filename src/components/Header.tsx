@@ -9,7 +9,7 @@ import logo from "@/assets/logo.png";
 const navLinks = [
   { label: "Home", href: "/" },
   { label: "Workflow", href: "/workflow" },
-  { label: "Disease Library", href: "/#diseases" },
+  { label: "Disease Library", href: "/diseases" },
   { label: "References", href: "/references" },
   { label: "About Us", href: "/about" },
 ];
