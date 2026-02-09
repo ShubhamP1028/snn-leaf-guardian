@@ -10,15 +10,15 @@ const teamMembers = [
     description: "B.Tech student passionate about applying neural network innovations to real-world agricultural problems. Leads the SNN model development, Cython optimization, and web platform deployment.",
     github: "https://github.com/ShubhamP1028",
     linkedin: "https://www.linkedin.com/in/shubham1028/",
-    email: "shubham30p@gmail.com",
+    email: "mailto:shubham30p@gmail.com",
   },
   {
-    name: "Teammate",
-    role: "Co-Researcher",
+    name: "Indrani Mandal",
+    role: "Developer",
     description: "B.Tech student contributing to dataset preparation, model evaluation, and documentation. Focused on ensuring the platform meets the needs of Indian smallholder farmers.",
-    github: "#",
-    linkedin: "#",
-    email: "#",
+    github: "https://github.com/Shivindrani",
+    linkedin: "https://www.linkedin.com/in/indranimandal/",
+    email: "mailto:indranim.work@gmail.com",
   },
 ];
 
