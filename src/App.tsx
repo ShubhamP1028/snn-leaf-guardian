@@ -8,6 +8,7 @@ import Index from "./pages/Index";
 import Workflow from "./pages/Workflow";
 import AboutUs from "./pages/AboutUs";
 import References from "./pages/References";
+import DiseaseLibrary from "./pages/DiseaseLibrary";
 import NotFound from "./pages/NotFound";
 
 const queryClient = new QueryClient();
@@ -24,6 +25,7 @@ const App = () => (
             <Route path="/workflow" element={<Workflow />} />
             <Route path="/about" element={<AboutUs />} />
             <Route path="/references" element={<References />} />
+            <Route path="/diseases" element={<DiseaseLibrary />} />
             {/* ADD ALL CUSTOM ROUTES ABOVE THE CATCH-ALL "*" ROUTE */}
             <Route path="*" element={<NotFound />} />
           </Routes>
