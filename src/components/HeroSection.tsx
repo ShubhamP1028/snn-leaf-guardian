@@ -49,8 +49,9 @@ export function HeroSection() {
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.6, delay: 0.25 }}
             className="text-xl md:text-2xl text-white/70 font-medium mb-8 ml-[55%]"
+            style={{ fontFamily: "'Lucida Console', 'Courier New', monospace" }}
           >
-            Project <span className="text-accent font-bold">ADITI</span>
+            PROJECT <span className="text-accent font-bold">A.D.I.T.I.</span>
           </motion.p>
           {/* Main Headline */}
           <motion.h1

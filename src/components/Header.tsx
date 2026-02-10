@@ -46,9 +46,13 @@ export function Header() {
           {/* Logo */}
           <Link to="/" className="flex items-center gap-2.5">
             <img src={logo} alt="Project ADITI logo" className="h-9 w-9 rounded-lg object-contain" />
-            <span className="text-lg font-bold text-foreground tracking-tight">
-              Project <span className="text-accent">ADITI</span>
+            <span 
+              className="text-lg font-bold text-foreground tracking-tight" 
+              style={{ fontFamily: "'Lucida Console', 'Courier New', monospace" }}
+            >
+              <span>A.D.I.T.I.</span>
             </span>
+
           </Link>
 
           {/* Desktop Nav */}

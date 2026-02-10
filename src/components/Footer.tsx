@@ -11,8 +11,10 @@ export function Footer() {
           <div className="md:col-span-2">
             <Link to="/" className="flex items-center gap-2.5 mb-4">
               <img src={logo} alt="Project ADITI logo" className="h-10 w-10 rounded-lg object-contain" />
-              <span className="text-xl font-bold text-white">
-                Project <span className="text-accent">ADITI</span>
+              <span className="text-xl font-bold text-white"
+              style={{ fontFamily: "'Lucida Console', 'Courier New', monospace" }}
+              >
+              <span>A.D.I.T.I.</span>
               </span>
             </Link>
             <p className="text-white/80 max-w-md mb-4">
@@ -60,7 +62,7 @@ export function Footer() {
             <h4 className="font-bold text-white mb-4">Project</h4>
             <ul className="space-y-2">
               <li><Link to="/about" className="text-white/70 hover:text-white transition-colors">About Us</Link></li>
-              <li><a href="https://github.com/ShubhamP1028" target="_blank" rel="noopener noreferrer" className="text-white/70 hover:text-white transition-colors">GitHub Repo</a></li>
+              <li><a href="https://github.com/ShubhamP1028/snn-leaf-guardian" target="_blank" rel="noopener noreferrer" className="text-white/70 hover:text-white transition-colors">GitHub Repo</a></li>
               <li><Link to="/references" className="text-white/70 hover:text-white transition-colors">Research Papers</Link></li>
               <li><a href="mailto:shubham30p@gmail.com" className="text-white/70 hover:text-white transition-colors">Contact</a></li>
             </ul>
