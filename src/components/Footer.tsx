@@ -62,7 +62,7 @@ export function Footer() {
             <h4 className="font-bold text-white mb-4">Project</h4>
             <ul className="space-y-2">
               <li><Link to="/about" className="text-white/70 hover:text-white transition-colors">About Us</Link></li>
-              <li><a href="https://github.com/ShubhamP1028/snn-leaf-guardian" target="_blank" rel="noopener noreferrer" className="text-white/70 hover:text-white transition-colors">GitHub Repo</a></li>
+              <li><a href="https://github.com/ShubhamP1028/Project-ADITI" target="_blank" rel="noopener noreferrer" className="text-white/70 hover:text-white transition-colors">GitHub Repo</a></li>
               <li><Link to="/references" className="text-white/70 hover:text-white transition-colors">Research Papers</Link></li>
               <li><a href="mailto:shubham30p@gmail.com" className="text-white/70 hover:text-white transition-colors">Contact</a></li>
             </ul>
