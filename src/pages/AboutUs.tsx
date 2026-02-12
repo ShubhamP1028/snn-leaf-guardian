@@ -64,7 +64,10 @@ const AboutUs = () => {
               About Us
             </h1>
             <p className="text-lg text-muted-foreground leading-relaxed">
-              We're B.Tech students building Project ADITI as our capstone project — 
+              We're B.Tech students building Project
+              <span 
+                className="text-lg font-bold text-accent" 
+                style={{fontFamily: "'Lucida Console', 'Courier New', monospace"}}> A.D.I.T.I. </span> as our capstone project — 
               combining Spiking Neural Networks with practical agricultural deployment to make 
               a real difference for Indian farmers.
             </p>
@@ -105,7 +108,10 @@ const AboutUs = () => {
               className="text-center mb-12"
             >
               <h2 className="text-3xl font-bold text-foreground mb-4">Meet the Team</h2>
-              <p className="text-muted-foreground">The people behind Project ADITI</p>
+              <p className="text-muted-foreground">The people behind Project
+                <span 
+                className="text-lg font-bold text-accent" 
+                style={{fontFamily: "'Lucida Console', 'Courier New', monospace"}}> A.D.I.T.I. </span></p>
             </motion.div>
 
             <div className="grid md:grid-cols-2 gap-8 max-w-4xl mx-auto">

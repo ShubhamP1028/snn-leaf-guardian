@@ -18,8 +18,8 @@ export function Footer() {
               </span>
             </Link>
             <p className="text-white/80 max-w-md mb-4">
-              Agricultural Disease Inference via Temporal Intelligence — 
-              Plant Disease Detection using Spiking Neural Networks with Cython Optimization.
+              Agricultural Disease Inference via Temporal Intelligence
+              Web App for Crop Disease Detection using SNN with Cython Optimization.
             </p>
             <div className="flex gap-3">
               <a
