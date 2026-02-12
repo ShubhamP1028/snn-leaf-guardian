@@ -2,12 +2,15 @@ import { motion } from "framer-motion";
 import { Header } from "@/components/Header";
 import { Footer } from "@/components/Footer";
 import { Github, Linkedin, Mail, GraduationCap, Target, Heart } from "lucide-react";
+import shubhamImg from "@/assets/shubham1.png";
+import indraniImg from "@/assets/indrani.jpeg";
 
 const teamMembers = [
   {
     name: "Shubham Pandey",
     role: "Lead Developer & Researcher",
     description: "B.Tech student passionate about applying neural network innovations to real-world agricultural problems. Leads the SNN model development, Cython optimization, and web platform deployment.",
+    image: shubhamImg,
     github: "https://github.com/ShubhamP1028",
     linkedin: "https://www.linkedin.com/in/shubham1028/",
     email: "mailto:shubham30p@gmail.com",
@@ -16,6 +19,7 @@ const teamMembers = [
     name: "Indrani Mandal",
     role: "Developer",
     description: "B.Tech student contributing to dataset preparation, model evaluation, and documentation. Focused on ensuring the platform meets the needs of Indian smallholder farmers.",
+    image: indraniImg,
     github: "https://github.com/Shivindrani",
     linkedin: "https://www.linkedin.com/in/indranimandal/",
     email: "mailto:indranim.work@gmail.com",
@@ -114,12 +118,11 @@ const AboutUs = () => {
                   transition={{ duration: 0.5, delay: index * 0.15 }}
                   className="p-8 rounded-2xl border border-border bg-card shadow-sm hover:shadow-md transition-shadow"
                 >
-                  {/* Avatar Placeholder */}
-                  <div className="w-20 h-20 rounded-2xl bg-gradient-to-br from-accent/20 to-primary/20 flex items-center justify-center mb-5">
-                    <span className="text-2xl font-bold text-foreground">
-                      {member.name.split(" ").map(n => n[0]).join("")}
-                    </span>
-                  </div>
+                  <img
+                    src={member.image}
+                    alt={member.name}
+                    className="w-20 h-20 rounded-2xl object-cover mb-5"
+                  />
 
                   <h3 className="text-xl font-bold text-foreground mb-1">{member.name}</h3>
                   <p className="text-accent text-sm font-medium mb-3">{member.role}</p>
