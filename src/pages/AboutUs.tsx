@@ -3,26 +3,24 @@ import { Header } from "@/components/Header";
 import { Footer } from "@/components/Footer";
 import { Github, Linkedin, Mail, GraduationCap, Target, Heart } from "lucide-react";
 import shubhamImg from "@/assets/shubham1.png";
-import indraniImg from "@/assets/indrani.jpeg";
+import AditiImg from "@/assets/Aditi.jpg";
 
 const teamMembers = [
   {
     name: "Shubham Pandey",
     role: "Lead Developer & Researcher",
-    description: "B.Tech student passionate about applying neural network innovations to real-world agricultural problems. Leads the SNN model development, Cython optimization, and web platform deployment.",
+    description: "ML Engineer in the making | Data Knight.",
     image: shubhamImg,
     github: "https://github.com/ShubhamP1028",
     linkedin: "https://www.linkedin.com/in/shubham1028/",
     email: "mailto:shubham30p@gmail.com",
   },
   {
-    name: "Indrani Mandal",
-    role: "Developer",
-    description: "B.Tech student contributing to dataset preparation, model evaluation, and documentation. Focused on ensuring the platform meets the needs of Indian smallholder farmers.",
-    image: indraniImg,
-    github: "https://github.com/Shivindrani",
-    linkedin: "https://www.linkedin.com/in/indranimandal/",
-    email: "mailto:indranim.work@gmail.com",
+    name: "Aditi Chaurasiya",
+    role: "Inspiration and Initiator",
+    description: "Future Doctor and Visionary",
+    image: AditiImg,
+    email: "mailto:aditi.chaurasiya20030910@gmail.com",
   },
 ];
 
@@ -176,8 +174,8 @@ const AboutUs = () => {
             >
               <h2 className="text-3xl font-bold text-white mb-4">B.Tech Capstone Project</h2>
               <p className="text-white/80 mb-6">
-                Project ADITI — Agricultural Disease Inference via Temporal Intelligence — 
-                is our final year capstone project focused on leveraging third-generation neural 
+                Project ADITI : Agricultural Disease Inference via Temporal Intelligence,
+                is my final year capstone project focused on leveraging third-generation neural 
                 networks for practical agricultural impact.
               </p>
               <div className="flex flex-wrap justify-center gap-4">
