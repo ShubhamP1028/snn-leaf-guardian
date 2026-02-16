@@ -3,12 +3,12 @@ import { Header } from "@/components/Header";
 import { Footer } from "@/components/Footer";
 import { Github, Linkedin, Mail, GraduationCap, Target, Heart } from "lucide-react";
 import shubhamImg from "@/assets/shubham1.png";
-import AditiImg from "@/assets/Aditi.jpg";
+import indraniImg from "@/assets/indrani.jpeg";
 
 const teamMembers = [
   {
     name: "Shubham Pandey",
-    role: "Lead Developer & Researcher",
+    role: "Lead Dev",
     description: "ML Engineer in the making | Data Knight.",
     image: shubhamImg,
     github: "https://github.com/ShubhamP1028",
@@ -16,11 +16,13 @@ const teamMembers = [
     email: "mailto:shubham30p@gmail.com",
   },
   {
-    name: "Aditi Chaurasiya",
-    role: "Inspiration and Initiator",
-    description: "Future Doctor and Visionary",
-    image: AditiImg,
-    email: "mailto:aditi.chaurasiya20030910@gmail.com",
+    name: "Indrani Mandal",
+    role: "Dev",
+    description: "Developer and Contributor",
+    image: indraniImg,
+    github: "https://github.com/shivindrani",
+    linkedin: "https://linkedin.com/in/indranimandal",
+    email: "mailto:indrani.work@gmail.com",
   },
 ];
 
