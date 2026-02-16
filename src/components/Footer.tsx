@@ -71,7 +71,7 @@ export function Footer() {
 
         <div className="pt-8 border-t border-white/10 flex flex-col md:flex-row justify-between items-center gap-4">
           <p className="text-white/70 text-sm">
-            © 2026 Project ADITI. Built by Shubham.
+            © 2026 Project <span className="text-lg font-bold text-accent" style={{fontFamily: "'Lucida Console', 'Courier New', monospace"}}> A.D.I.T.I.</span> Built by Shubham.
           </p>
           <div className="flex gap-6 text-sm">
             <a href="https://linkedin.com/in/shubham1028" className="text-white/90 hover:text-white transition-colors">LinkedIn</a>

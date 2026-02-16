@@ -174,7 +174,9 @@ const AboutUs = () => {
             >
               <h2 className="text-3xl font-bold text-white mb-4">B.Tech Capstone Project</h2>
               <p className="text-white/80 mb-6">
-                Project ADITI : Agricultural Disease Inference via Temporal Intelligence,
+                Project<span 
+                className="text-lg font-bold text-accent" 
+                style={{fontFamily: "'Lucida Console', 'Courier New', monospace"}}> A.D.I.T.I.</span> : Agricultural Disease Inference via Temporal Intelligence,
                 is my final year capstone project focused on leveraging third-generation neural 
                 networks for practical agricultural impact.
               </p>
