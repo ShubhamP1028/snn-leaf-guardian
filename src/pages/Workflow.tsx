@@ -1,7 +1,7 @@
 import { motion } from "framer-motion";
 import { Header } from "@/components/Header";
 import { Footer } from "@/components/Footer";
-import { Camera, Cpu, Zap, FileCheck, ArrowDown, Database, BarChart3, Shield } from "lucide-react";
+import { Camera, Cpu, Zap, FileCheck, ArrowDown, Database, BarChart3, Shield, Layers } from "lucide-react";
 
 const pipeline = [
   {
@@ -14,35 +14,42 @@ const pipeline = [
   {
     icon: Database,
     title: "2. Preprocessing & Augmentation",
-    description: "The image undergoes normalization to [0,1] range, followed by data augmentation including random rotation, brightness adjustment, and horizontal flipping to improve model robustness.",
+    description: "The image undergoes normalization to [0,1] range, followed by data augmentation — random rotation, brightness adjustment, and horizontal flipping — to improve model robustness across field conditions.",
     tech: "Normalize [0,1] + Augmentation",
     color: "bg-primary/10 text-primary",
   },
   {
-    icon: Zap,
-    title: "3. Spike Encoding",
-    description: "Pixel intensities are converted into Bernoulli spike trains over T=25 timesteps. Each pixel generates a binary spike (0 or 1) at each timestep with probability equal to its normalized intensity.",
-    tech: "Bernoulli(pixel_intensity) → {0,1}^T",
+    icon: Layers,
+    title: "3. CNN Feature Extraction",
+    description: "A pretrained ResNet-based CNN backbone extracts rich spatial feature maps from the leaf image. Convolutional layers detect edges, textures, and disease-specific visual patterns across multiple scales, producing a compact feature vector.",
+    tech: "ResNet Backbone → Feature Vector (512-d)",
     color: "bg-accent/10 text-accent",
   },
   {
-    icon: Cpu,
-    title: "4. SNN Forward Pass",
-    description: "The spike trains pass through 4 layers of Leaky Integrate-and-Fire (LIF) neurons (256→128→64→38). Each neuron accumulates incoming spikes into membrane potential and fires when threshold is reached.",
-    tech: "V(t) = V(t-1) + I(t) − V(t-1)/τ",
+    icon: Zap,
+    title: "4. Spike Encoding",
+    description: "The CNN feature vector is converted into Bernoulli spike trains over T=25 timesteps. Each feature dimension generates a binary spike (0 or 1) at each timestep with probability proportional to its activation magnitude.",
+    tech: "Bernoulli(feature_activation) → {0,1}^T",
     color: "bg-primary/10 text-primary",
   },
   {
-    icon: BarChart3,
-    title: "5. Spike Decoding",
-    description: "Output spikes are counted over all T timesteps for each of the 38 output neurons. These spike counts are normalized via softmax to produce probability scores for each disease class.",
-    tech: "Spike Count → Softmax Probabilities",
+    icon: Cpu,
+    title: "5. SNN Classification",
+    description: "Spike trains pass through Leaky Integrate-and-Fire (LIF) neuron layers (512→256→128→38). Each neuron accumulates incoming spikes into membrane potential and fires when the threshold is crossed, mimicking biological neural dynamics.",
+    tech: "V(t) = βV(t-1) + I(t);  fire if V(t) ≥ θ",
     color: "bg-accent/10 text-accent",
   },
   {
+    icon: BarChart3,
+    title: "6. Spike Decoding",
+    description: "Output spikes are accumulated over all T timesteps for each of the 38 output neurons. Spike counts are normalized via softmax to produce calibrated probability scores per disease class.",
+    tech: "Spike Count → Softmax Probabilities",
+    color: "bg-primary/10 text-primary",
+  },
+  {
     icon: FileCheck,
-    title: "6. Diagnosis Output",
-    description: "The system outputs the predicted disease class with confidence score, along with detailed treatment recommendations and care instructions in the farmer's preferred language.",
+    title: "7. Diagnosis Output",
+    description: "The system returns the predicted disease class with a confidence score, along with treatment recommendations and care instructions — helping farmers take immediate, informed action.",
     tech: "Disease Class + Confidence + Treatment Plan",
     color: "bg-success/10 text-success",
   },
@@ -51,18 +58,18 @@ const pipeline = [
 const optimizations = [
   {
     icon: Zap,
-    title: "Cython Optimization",
-    description: "Critical computation loops are compiled to C via Cython, achieving 5-10x speedup over pure Python for spike generation and LIF neuron updates.",
+    title: "Hybrid CNN-SNN Design",
+    description: "The CNN backbone handles spatial feature extraction where it excels, while the SNN handles temporal classification — combining the accuracy of deep learning with the energy efficiency of neuromorphic computing.",
   },
   {
     icon: Shield,
     title: "Edge Deployment",
-    description: "The optimized model runs entirely on-device—no cloud connection required. Compatible with Raspberry Pi, Android smartphones, and neuromorphic hardware.",
+    description: "The optimized model runs entirely on-device — no cloud connection required. Compatible with Raspberry Pi, Android smartphones, and neuromorphic hardware like Intel Loihi.",
   },
   {
     icon: BarChart3,
     title: "Energy Efficiency",
-    description: "SNNs only compute when spikes occur (event-driven), consuming 10x less energy than equivalent CNNs. Ideal for battery-powered field devices.",
+    description: "SNNs are event-driven — neurons only compute when spikes occur. This results in up to 10× lower energy consumption compared to equivalent CNN-only models, ideal for battery-powered field devices.",
   },
 ];
 
@@ -86,14 +93,50 @@ const Workflow = () => {
               How Project ADITI Works
             </h1>
             <p className="text-lg text-muted-foreground leading-relaxed">
-              From a simple leaf photo to an accurate disease diagnosis in under 10 milliseconds — 
-              here's the complete end-to-end pipeline powered by Spiking Neural Networks.
+              From a simple leaf photo to an accurate disease diagnosis — powered by a CNN-SNN hybrid architecture
+              that combines deep feature extraction with biologically-inspired spiking neural networks.
             </p>
+          </motion.div>
+        </section>
+
+        {/* Architecture Diagram */}
+        <section className="container mx-auto px-4 mb-20">
+          <motion.div
+            initial={{ opacity: 0, y: 20 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            viewport={{ once: true }}
+            transition={{ duration: 0.6 }}
+            className="max-w-4xl mx-auto"
+          >
+            <div className="text-center mb-6">
+              <h2 className="text-2xl font-bold text-foreground mb-2">Model Architecture</h2>
+              <p className="text-muted-foreground text-sm max-w-2xl mx-auto">
+                The CNN backbone extracts spatial features from the leaf image, which are then encoded as spike trains
+                and classified by the SNN layers — combining the representational power of CNNs with the temporal
+                dynamics and energy efficiency of spiking neurons.
+              </p>
+            </div>
+            <div className="rounded-2xl border border-border bg-card shadow-md overflow-hidden p-4">
+              <img
+                src="/CNN_SNN_hybrid_model_architecture.jpg"
+                alt="CNN-SNN Hybrid Model Architecture"
+                className="w-full h-auto rounded-xl object-contain"
+              />
+            </div>
           </motion.div>
         </section>
 
         {/* Pipeline Steps */}
         <section className="container mx-auto px-4 mb-20">
+          <motion.div
+            initial={{ opacity: 0, y: 20 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            viewport={{ once: true }}
+            className="text-center mb-10"
+          >
+            <h2 className="text-2xl font-bold text-foreground mb-2">End-to-End Pipeline</h2>
+            <p className="text-muted-foreground text-sm">Step-by-step breakdown of how a leaf image becomes a diagnosis.</p>
+          </motion.div>
           <div className="max-w-3xl mx-auto space-y-2">
             {pipeline.map((step, index) => (
               <div key={step.title}>
@@ -101,7 +144,7 @@ const Workflow = () => {
                   initial={{ opacity: 0, x: index % 2 === 0 ? -30 : 30 }}
                   whileInView={{ opacity: 1, x: 0 }}
                   viewport={{ once: true }}
-                  transition={{ duration: 0.5, delay: index * 0.1 }}
+                  transition={{ duration: 0.5, delay: index * 0.08 }}
                   className="p-6 rounded-2xl border border-border bg-card shadow-sm hover:shadow-md transition-shadow"
                 >
                   <div className="flex items-start gap-4">
@@ -136,9 +179,9 @@ const Workflow = () => {
               viewport={{ once: true }}
               className="text-center mb-12"
             >
-              <h2 className="text-3xl font-bold text-foreground mb-4">Key Optimizations</h2>
+              <h2 className="text-3xl font-bold text-foreground mb-4">Key Advantages</h2>
               <p className="text-muted-foreground max-w-2xl mx-auto">
-                What makes our approach production-ready for real-world agricultural deployment.
+                What makes the CNN-SNN hybrid approach production-ready for real-world agricultural deployment.
               </p>
             </motion.div>
 

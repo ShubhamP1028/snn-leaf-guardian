@@ -11,35 +11,10 @@ interface AnalysisResult {
   treatment: string[];
 }
 
-const mockResults: AnalysisResult[] = [
-  {
-    disease: "Tomato Late Blight",
-    confidence: 94.7,
-    isHealthy: false,
-    description: "A serious disease caused by Phytophthora infestans. It affects leaves, stems, and fruits, causing dark water-soaked lesions.",
-    treatment: [
-      "Remove and destroy affected plant parts immediately",
-      "Apply copper-based fungicide",
-      "Improve air circulation around plants",
-      "Water at the base, not on foliage"
-    ]
-  },
-  {
-    disease: "Healthy Plant",
-    confidence: 98.2,
-    isHealthy: true,
-    description: "Your plant appears to be healthy with no visible signs of disease. Keep up the good care!",
-    treatment: [
-      "Continue regular watering schedule",
-      "Maintain proper nutrition",
-      "Monitor for early signs of stress"
-    ]
-  }
-];
-
 export function ImageUploader() {
   const [isDragging, setIsDragging] = useState(false);
   const [uploadedImage, setUploadedImage] = useState<string | null>(null);
+  const [selectedFile, setSelectedFile] = useState<File | null>(null);
   const [isAnalyzing, setIsAnalyzing] = useState(false);
   const [result, setResult] = useState<AnalysisResult | null>(null);
 
@@ -66,10 +41,11 @@ export function ImageUploader() {
 
   const handleFile = (file: File) => {
     if (file.type.startsWith("image/")) {
+      setSelectedFile(file);
       const reader = new FileReader();
       reader.onload = (e) => {
         setUploadedImage(e.target?.result as string);
-        simulateAnalysis();
+        analyzeImage(file);
       };
       reader.readAsDataURL(file);
     }
@@ -82,18 +58,46 @@ export function ImageUploader() {
     }
   };
 
-  const simulateAnalysis = () => {
+  const analyzeImage = async (file: File) => {
     setIsAnalyzing(true);
     setResult(null);
-    
-    setTimeout(() => {
+
+    try {
+      const formData = new FormData();
+      formData.append("image", file);
+
+      const response = await fetch("/api/predict", {
+        method: "POST",
+        body: formData,
+      });
+
+      const data = await response.json();
+
+      if (!response.ok) {
+        throw new Error(data.error || "Prediction failed");
+      }
+
+      setResult(data);
+    } catch (error) {
+      console.error("Analysis error:", error);
+      setResult({
+        disease: "Analysis Failed",
+        confidence: 0,
+        isHealthy: false,
+        description:
+          error instanceof Error
+            ? error.message
+            : "Could not connect to the analysis server. Please ensure the backend is running.",
+        treatment: ["Check that the Flask server is running on port 5000", "Ensure the model file is loaded"],
+      });
+    } finally {
       setIsAnalyzing(false);
-      setResult(mockResults[Math.random() > 0.5 ? 0 : 1]);
-    }, 2500);
+    }
   };
 
   const resetUpload = () => {
     setUploadedImage(null);
+    setSelectedFile(null);
     setResult(null);
     setIsAnalyzing(false);
   };

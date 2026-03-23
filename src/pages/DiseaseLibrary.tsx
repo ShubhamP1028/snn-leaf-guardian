@@ -12,14 +12,14 @@ interface Disease {
 
 interface PlantData {
   plant: string;
-  emoji: string;
+  icon: string;
   diseases: Disease[];
 }
 
 const plantData: PlantData[] = [
   {
     plant: "Apple",
-    emoji: "🍎",
+    icon: "/apple.png",
     diseases: [
       { name: "Apple Scab", description: "Caused by Venturia inaequalis. Produces olive-green to black velvety spots on leaves and fruit, leading to defoliation and reduced fruit quality.", severity: "High" },
       { name: "Black Rot", description: "Caused by Botryosphaeria obtusa. Produces large brown rotting areas on fruit with concentric rings, and frogeye leaf spots.", severity: "High" },
@@ -29,14 +29,14 @@ const plantData: PlantData[] = [
   },
   {
     plant: "Blueberry",
-    emoji: "🫐",
+    icon: "/blueberry.png",
     diseases: [
       { name: "Healthy", description: "No disease detected. The leaf shows normal color, texture, and structure.", severity: "Healthy" },
     ],
   },
   {
     plant: "Cherry (including sour)",
-    emoji: "🍒",
+    icon: "/cherry.png",
     diseases: [
       { name: "Powdery Mildew", description: "Caused by Podosphaera clandestina. Produces white powdery coating on leaves, shoots, and fruit, stunting growth and reducing yield.", severity: "Medium" },
       { name: "Healthy", description: "No disease detected. The leaf shows normal color, texture, and structure.", severity: "Healthy" },
@@ -44,7 +44,7 @@ const plantData: PlantData[] = [
   },
   {
     plant: "Corn (Maize)",
-    emoji: "🌽",
+    icon: "/corn.png",
     diseases: [
       { name: "Cercospora Leaf Spot / Gray Leaf Spot", description: "Caused by Cercospora zeae-maydis. Produces rectangular gray to tan lesions that run parallel to leaf veins, reducing photosynthetic area.", severity: "High" },
       { name: "Common Rust", description: "Caused by Puccinia sorghi. Produces small, circular to elongated brown pustules on both leaf surfaces, releasing powdery spores.", severity: "Medium" },
@@ -54,7 +54,7 @@ const plantData: PlantData[] = [
   },
   {
     plant: "Grape",
-    emoji: "🍇",
+    icon: "/grapes.png",
     diseases: [
       { name: "Black Rot", description: "Caused by Guignardia bidwellii. Produces brown circular lesions on leaves with dark margins, and causes fruit to shrivel into hard black mummies.", severity: "High" },
       { name: "Esca (Black Measles)", description: "A complex disease involving multiple fungi. Causes interveinal striping on leaves and dark spots on berries, potentially killing the vine.", severity: "High" },
@@ -64,14 +64,14 @@ const plantData: PlantData[] = [
   },
   {
     plant: "Orange",
-    emoji: "🍊",
+    icon: "/orange.png",
     diseases: [
       { name: "Huanglongbing (Citrus Greening)", description: "Caused by Candidatus Liberibacter bacteria, spread by psyllid insects. Produces blotchy mottling on leaves, lopsided bitter fruit, and eventually kills the tree. One of the most devastating citrus diseases worldwide.", severity: "High" },
     ],
   },
   {
     plant: "Peach",
-    emoji: "🍑",
+    icon: "/peach.png",
     diseases: [
       { name: "Bacterial Spot", description: "Caused by Xanthomonas arboricola. Produces small dark water-soaked lesions on leaves, which may fall out creating a shot-hole appearance, and pitted lesions on fruit.", severity: "Medium" },
       { name: "Healthy", description: "No disease detected. The leaf shows normal color, texture, and structure.", severity: "Healthy" },
@@ -79,7 +79,7 @@ const plantData: PlantData[] = [
   },
   {
     plant: "Pepper (Bell)",
-    emoji: "🫑",
+    icon: "/bell-pepper.png",
     diseases: [
       { name: "Bacterial Spot", description: "Caused by Xanthomonas campestris. Produces small, dark, water-soaked spots on leaves and fruit that become raised and scabby, reducing marketability.", severity: "Medium" },
       { name: "Healthy", description: "No disease detected. The leaf shows normal color, texture, and structure.", severity: "Healthy" },
@@ -87,7 +87,7 @@ const plantData: PlantData[] = [
   },
   {
     plant: "Potato",
-    emoji: "🥔",
+    icon: "/potato.png",
     diseases: [
       { name: "Early Blight", description: "Caused by Alternaria solani. Produces dark brown spots with concentric rings (target-board pattern) on older leaves, progressing upward.", severity: "Medium" },
       { name: "Late Blight", description: "Caused by Phytophthora infestans. Produces large, dark, water-soaked lesions on leaves with white fuzzy growth on undersides. Historically devastating — caused the Irish Potato Famine.", severity: "High" },
@@ -96,28 +96,28 @@ const plantData: PlantData[] = [
   },
   {
     plant: "Raspberry",
-    emoji: "🫐",
+    icon: "/raspberry.png",
     diseases: [
       { name: "Healthy", description: "No disease detected. The leaf shows normal color, texture, and structure.", severity: "Healthy" },
     ],
   },
   {
     plant: "Soybean",
-    emoji: "🫘",
+    icon: "/soyabeans.png",
     diseases: [
       { name: "Healthy", description: "No disease detected. The leaf shows normal color, texture, and structure.", severity: "Healthy" },
     ],
   },
   {
     plant: "Squash",
-    emoji: "🎃",
+    icon: "/squash.png",
     diseases: [
       { name: "Powdery Mildew", description: "Caused by Podosphaera xanthii. Produces white powdery patches on leaf surfaces, reducing photosynthesis and weakening the plant.", severity: "Medium" },
     ],
   },
   {
     plant: "Strawberry",
-    emoji: "🍓",
+    icon: "/strawberry.png",
     diseases: [
       { name: "Leaf Scorch", description: "Caused by Diplocarpon earlianum. Produces numerous small dark purple spots on leaves that develop tan centers, leading to a scorched appearance.", severity: "Low" },
       { name: "Healthy", description: "No disease detected. The leaf shows normal color, texture, and structure.", severity: "Healthy" },
@@ -125,7 +125,7 @@ const plantData: PlantData[] = [
   },
   {
     plant: "Tomato",
-    emoji: "🍅",
+    icon: "/tomato.png",
     diseases: [
       { name: "Bacterial Spot", description: "Caused by Xanthomonas species. Produces small, dark, water-soaked spots on leaves and fruit that become raised and scabby.", severity: "Medium" },
       { name: "Early Blight", description: "Caused by Alternaria solani. Produces dark brown spots with concentric rings on older leaves, potentially causing significant defoliation.", severity: "Medium" },
@@ -231,7 +231,7 @@ const DiseaseLibraryPage = () => {
                     }`}
                   >
                     <div className="flex items-center gap-3">
-                      <span className="text-3xl">{plant.emoji}</span>
+                      <img src={plant.icon} alt={plant.plant} className="w-9 h-9 object-contain" />
                       <div className="text-left">
                         <h3 className="font-bold text-foreground">{plant.plant}</h3>
                         <p className="text-xs text-muted-foreground">
