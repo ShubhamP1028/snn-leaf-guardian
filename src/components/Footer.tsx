@@ -14,19 +14,19 @@ export function Footer() {
               <span className="text-xl font-bold text-white"
               style={{ fontFamily: "'Lucida Console', 'Courier New', monospace" }}
               >
-              <span>A.D.I.T.I.</span>
+              <span className="text-accent">A.D.I.T.I.</span>
               </span>
             </Link>
             <p className="text-white/80 max-w-md mb-4">
               Agricultural Disease Inference via Temporal Intelligence
-              Web App for Crop Disease Detection using SNN with Cython Optimization.
+              Web App for Plant Disease Detection using SNN-CNN hybrid with Cython Optimization.
             </p>
             <div className="flex gap-3">
               <a
                 href="https://github.com/ShubhamP1028"
                 target="_blank"
                 rel="noopener noreferrer"
-                className="w-10 h-10 rounded-lg bg-white/10 flex items-center justify-center text-white/80 hover:text-white hover:bg-white/20 transition-all"
+                className="w-10 h-10 rounded-lg bg-white/10 flex items-center justify-center text-white/80 hover:text-white/80 hover:text-bold hover:bg-black/80 transition-all"
               >
                 <Github className="h-5 w-5" />
               </a>
@@ -34,7 +34,7 @@ export function Footer() {
                 href="https://www.linkedin.com/in/shubham1028/"
                 target="_blank"
                 rel="noopener noreferrer"
-                className="w-10 h-10 rounded-lg bg-white/10 flex items-center justify-center text-white/80 hover:text-white hover:bg-white/20 transition-all"
+                className="w-10 h-10 rounded-lg bg-white/10 flex items-center justify-center text-white/80 hover:text-white hover:bg-blue-600 transition-all"
               >
                 <Linkedin className="h-5 w-5" />
               </a>
@@ -51,19 +51,20 @@ export function Footer() {
           <div>
             <h4 className="font-bold text-white mb-4">Platform</h4>
             <ul className="space-y-2">
-              <li><Link to="/#features" className="text-white/70 hover:text-white transition-colors">Scan Plant</Link></li>
-              <li><Link to="/workflow" className="text-white/70 hover:text-white transition-colors">Workflow</Link></li>
-              <li><Link to="/diseases" className="text-white/70 hover:text-white transition-colors">Disease Library</Link></li>
-              <li><Link to="/references" className="text-white/70 hover:text-white transition-colors">References</Link></li>
+              {/* <li><Link to="/#features" className="text-white/70 hover:text-white transition-colors">Scan Plant</Link></li> */}
+              <li><Link to="/workflow" className="text-white/70 hover:text-white hover:font-bold transition-colors">Workflow</Link></li>
+              <li><Link to="/diseases" className="text-white/70 hover:text-white hover:font-bold transition-colors">Disease Library</Link></li>
+              <li><Link to="/references" className="text-white/70 hover:text-white hover:font-bold transition-colors">References</Link></li>
+              
             </ul>
           </div>
 
           <div>
             <h4 className="font-bold text-white mb-4">Project</h4>
             <ul className="space-y-2">
-              <li><Link to="/about" className="text-white/70 hover:text-white transition-colors">About Us</Link></li>
-              <li><a href="https://github.com/ShubhamP1028/Project-ADITI" target="_blank" rel="noopener noreferrer" className="text-white/70 hover:text-white transition-colors">GitHub Repo</a></li>
-              <li><Link to="/references" className="text-white/70 hover:text-white transition-colors">Research Papers</Link></li>
+              <li><Link to="/about" className="text-white/70 hover:text-white hover:font-bold transition-colors">About Us</Link></li>
+              <li><Link to="/research" className="text-white/70 hover:text-white hover:font-bold transition-colors">Research</Link></li>
+              <li><Link to="/references" className="text-white/70 hover:text-white hover:font-bold transition-colors">Research Papers</Link></li>
               {/* <li><a href="mailto:shubham30p@gmail.com" className="text-white/70 hover:text-white transition-colors">Contact</a></li> */}
             </ul>
           </div>
