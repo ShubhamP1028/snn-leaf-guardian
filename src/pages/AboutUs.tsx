@@ -1,9 +1,9 @@
 import { motion } from "framer-motion";
 import { Header } from "@/components/Header";
 import { Footer } from "@/components/Footer";
-import { Github, Linkedin, Mail, GraduationCap, Target, Heart } from "lucide-react";
+import { Github, Linkedin,Instagram, Mail, GraduationCap, Target, Heart } from "lucide-react";
 import shubhamImg from "@/assets/shubham1.png";
-import indraniImg from "@/assets/indrani.jpeg";
+import aditiImg from "@/assets/Aditi.jpg";
 
 const teamMembers = [
   {
@@ -16,13 +16,12 @@ const teamMembers = [
     email: "mailto:shubham30p@gmail.com",
   },
   {
-    name: "Indrani Mandal",
-    role: "Developer",
-    description: "Developer and Contributor",
-    image: indraniImg,
-    github: "https://github.com/shivindrani",
-    linkedin: "https://linkedin.com/in/indranimandal",
-    email: "mailto:indranim.work@gmail.com",
+    name: "Aditi Chaurasiya",
+    role: "Inspiration and Support",
+    description: "The muse behind the code | Silent supporter.",
+    image: aditiImg,
+    github: "https://instagram.com/panditainkapandey",
+    email: "mailto:aditi.chaurasiya20030910@gmail.com",
   },
 ];
 
@@ -64,11 +63,11 @@ const AboutUs = () => {
               About Us
             </h1>
             <p className="text-lg text-muted-foreground leading-relaxed">
-              We're B.Tech students building Project
+              We're students building individual Project
               <span 
                 className="text-lg font-bold text-accent" 
-                style={{fontFamily: "'Lucida Console', 'Courier New', monospace"}}> A.D.I.T.I. </span> as our capstone project — 
-              combining Spiking Neural Networks with practical agricultural deployment to make 
+                style={{fontFamily: "'Lucida Console', 'Courier New', monospace"}}> A.D.I.T.I. </span> — 
+              as we are interested in Neuroscience this project is our practical learning from computational neuroscience, combining Spiking Neural Networks with practical agricultural deployment to make 
               a real difference for Indian farmers.
             </p>
           </motion.div>
@@ -110,11 +109,11 @@ const AboutUs = () => {
                   <p className="text-muted-foreground text-sm mb-5">{member.description}</p>
                   <div className="flex gap-3">
                     <a href={member.github} target="_blank" rel="noopener noreferrer"
-                      className="w-9 h-9 rounded-lg bg-muted flex items-center justify-center text-muted-foreground hover:text-foreground hover:bg-muted/80 transition-all">
+                      className="w-9 h-9 rounded-lg bg-muted flex items-center justify-center text-muted-foreground hover:text-foreground hover:bg-black/80 transition-all">
                       <Github className="h-4 w-4" />
                     </a>
                     <a href={member.linkedin} target="_blank" rel="noopener noreferrer"
-                      className="w-9 h-9 rounded-lg bg-muted flex items-center justify-center text-muted-foreground hover:text-foreground hover:bg-muted/80 transition-all">
+                      className="w-9 h-9 rounded-lg bg-muted flex items-center justify-center text-muted-foreground hover:text-foreground hover:bg-blue-600 transition-all">
                       <Linkedin className="h-4 w-4" />
                     </a>
                     <a href={`mailto:${member.email}`}
