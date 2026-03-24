@@ -22,7 +22,7 @@ const teamMembers = [
     image: indraniImg,
     github: "https://github.com/shivindrani",
     linkedin: "https://linkedin.com/in/indranimandal",
-    email: "mailto:indrani.work@gmail.com",
+    email: "mailto:indranim.work@gmail.com",
   },
 ];
 
