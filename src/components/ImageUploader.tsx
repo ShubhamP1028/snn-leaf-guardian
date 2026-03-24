@@ -173,14 +173,15 @@ export function ImageUploader() {
                       or click to browse
                     </p>
                     <div className="flex gap-3">
-                      <Button variant="default" size="sm">
-                        <ImageIcon className="h-4 w-4 mr-2" />
+                      <div className="flex text-sm mb-2 border-5 bg-accent/5">
+                        <ImageIcon className="h-5 w-5 mr-2" />
+                        
                         Browse
-                      </Button>
-                      <Button variant="outline" size="sm">
+                      </div>
+                      {/* <div className="flex text-sm mb-2 border-1 border-solid">
                         <Camera className="h-4 w-4 mr-2" />
                         Camera
-                      </Button>
+                      </div> */}
                     </div>
                     <p className="text-muted-foreground text-xs mt-4">
                       Supports: JPG, PNG, WEBP (Max 10MB)

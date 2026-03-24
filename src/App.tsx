@@ -9,13 +9,14 @@ import Workflow from "./pages/Workflow";
 import AboutUs from "./pages/AboutUs";
 import References from "./pages/References";
 import DiseaseLibrary from "./pages/DiseaseLibrary";
+import Research from "./pages/Research";
 import NotFound from "./pages/NotFound";
 
 const queryClient = new QueryClient();
 
 const App = () => (
   <QueryClientProvider client={queryClient}>
-    <ThemeProvider defaultTheme="light" storageKey="aditi-ui-theme">
+    <ThemeProvider defaultTheme="dark" storageKey="aditi-ui-theme">
       <TooltipProvider>
         <Toaster />
         <Sonner />
@@ -26,6 +27,7 @@ const App = () => (
             <Route path="/about" element={<AboutUs />} />
             <Route path="/references" element={<References />} />
             <Route path="/diseases" element={<DiseaseLibrary />} />
+            <Route path="/research" element={<Research />} />
             {/* ADD ALL CUSTOM ROUTES ABOVE THE CATCH-ALL "*" ROUTE */}
             <Route path="*" element={<NotFound />} />
           </Routes>

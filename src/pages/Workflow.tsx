@@ -1,7 +1,9 @@
+import { useState } from "react";
 import { motion } from "framer-motion";
 import { Header } from "@/components/Header";
 import { Footer } from "@/components/Footer";
-import { Camera, Cpu, Zap, FileCheck, ArrowDown, Database, BarChart3, Shield, Layers } from "lucide-react";
+import { Camera, Cpu, Zap, FileCheck, Database, BarChart3, Shield, Layers, Maximize2, ArrowDown } from "lucide-react";
+import { ImageLightbox } from "@/components/ImageLightbox";
 
 const pipeline = [
   {
@@ -73,11 +75,27 @@ const optimizations = [
   },
 ];
 
+function ClickableImage({ src, alt }: { src: string; alt: string }) {
+  const [open, setOpen] = useState(false);
+  return (
+    <>
+      <div className="relative group cursor-zoom-in rounded-xl overflow-hidden" onClick={() => setOpen(true)}>
+        <img src={src} alt={alt} className="w-full h-auto object-contain rounded-xl" />
+        <div className="absolute inset-0 bg-black/0 group-hover:bg-black/20 transition-colors flex items-center justify-center">
+          <Maximize2 className="h-8 w-8 text-white opacity-0 group-hover:opacity-100 transition-opacity drop-shadow-lg" />
+        </div>
+      </div>
+      {open && <ImageLightbox src={src} alt={alt} onClose={() => setOpen(false)} />}
+    </>
+  );
+}
+
 const Workflow = () => {
   return (
     <div className="min-h-screen bg-background">
       <Header />
       <main className="pt-28 pb-20">
+
         {/* Hero */}
         <section className="container mx-auto px-4 mb-20">
           <motion.div
@@ -117,60 +135,82 @@ const Workflow = () => {
               </p>
             </div>
             <div className="rounded-2xl border border-border bg-card shadow-md overflow-hidden p-4">
-              <img
-                src="/CNN_SNN_hybrid_model_architecture.jpg"
-                alt="CNN-SNN Hybrid Model Architecture"
-                className="w-full h-auto rounded-xl object-contain"
-              />
+              <ClickableImage src="/CNN_SNN_hybrid_model_architecture.jpg" alt="CNN-SNN Hybrid Model Architecture" />
             </div>
+            <p className="text-xs text-muted-foreground text-center mt-2">Click image to expand</p>
           </motion.div>
         </section>
 
-        {/* Pipeline Steps */}
+        {/* Pipeline — zigzag */}
         <section className="container mx-auto px-4 mb-20">
           <motion.div
             initial={{ opacity: 0, y: 20 }}
             whileInView={{ opacity: 1, y: 0 }}
             viewport={{ once: true }}
-            className="text-center mb-10"
+            className="text-center mb-12"
           >
             <h2 className="text-2xl font-bold text-foreground mb-2">End-to-End Pipeline</h2>
             <p className="text-muted-foreground text-sm">Step-by-step breakdown of how a leaf image becomes a diagnosis.</p>
           </motion.div>
-          <div className="max-w-3xl mx-auto space-y-2">
-            {pipeline.map((step, index) => (
-              <div key={step.title}>
-                <motion.div
-                  initial={{ opacity: 0, x: index % 2 === 0 ? -30 : 30 }}
-                  whileInView={{ opacity: 1, x: 0 }}
-                  viewport={{ once: true }}
-                  transition={{ duration: 0.5, delay: index * 0.08 }}
-                  className="p-6 rounded-2xl border border-border bg-card shadow-sm hover:shadow-md transition-shadow"
-                >
-                  <div className="flex items-start gap-4">
-                    <div className={`w-12 h-12 rounded-xl ${step.color} flex items-center justify-center flex-shrink-0`}>
-                      <step.icon className="h-6 w-6" />
+
+          {/* Central spine + zigzag cards */}
+          <div className="relative max-w-4xl mx-auto">
+            {/* Vertical centre line — hidden on mobile */}
+            <div className="hidden md:block absolute left-1/2 top-0 bottom-0 w-px bg-border -translate-x-1/2" />
+
+            <div className="space-y-0">
+              {pipeline.map((step, index) => {
+                const isLeft = index % 2 === 0; // even → card on left, odd → card on right
+                return (
+                  <div key={step.title} className="relative">
+                    {/* Row */}
+                    <div className={`flex items-center gap-0 ${isLeft ? "flex-row" : "flex-row-reverse"} md:gap-0`}>
+
+                      {/* Card — takes up ~45% width on desktop */}
+                      <motion.div
+                        initial={{ opacity: 0, x: isLeft ? -40 : 40 }}
+                        whileInView={{ opacity: 1, x: 0 }}
+                        viewport={{ once: true }}
+                        transition={{ duration: 0.5, delay: index * 0.07 }}
+                        className="w-full md:w-[45%] p-5 rounded-2xl border border-border bg-card shadow-sm hover:shadow-md transition-shadow"
+                      >
+                        <div className="flex items-start gap-3">
+                          <div className={`w-11 h-11 rounded-xl ${step.color} flex items-center justify-center flex-shrink-0`}>
+                            <step.icon className="h-5 w-5" />
+                          </div>
+                          <div className="flex-1 min-w-0">
+                            <h3 className="font-bold text-foreground mb-1 text-sm md:text-base">{step.title}</h3>
+                            <p className="text-muted-foreground text-xs mb-2 leading-relaxed">{step.description}</p>
+                            <code className="text-[10px] font-mono px-2 py-1 rounded-md bg-muted text-muted-foreground break-all">
+                              {step.tech}
+                            </code>
+                          </div>
+                        </div>
+                      </motion.div>
+
+                      {/* Centre dot + connector — desktop only */}
+                      <div className="hidden md:flex w-[10%] flex-col items-center relative">
+                        <div className="w-4 h-4 rounded-full bg-accent border-2 border-background shadow-md z-10" />
+                      </div>
+
+                      {/* Spacer on the opposite side — desktop only */}
+                      <div className="hidden md:block w-[45%]" />
                     </div>
-                    <div className="flex-1">
-                      <h3 className="text-lg font-bold text-foreground mb-2">{step.title}</h3>
-                      <p className="text-muted-foreground text-sm mb-3">{step.description}</p>
-                      <code className="text-xs font-mono px-3 py-1.5 rounded-lg bg-muted text-muted-foreground">
-                        {step.tech}
-                      </code>
-                    </div>
+
+                    {/* Arrow between steps — mobile: centred, desktop: on the spine */}
+                    {index < pipeline.length - 1 && (
+                      <div className="flex justify-center md:justify-center py-2">
+                        <ArrowDown className="h-4 w-4 text-muted-foreground/40" />
+                      </div>
+                    )}
                   </div>
-                </motion.div>
-                {index < pipeline.length - 1 && (
-                  <div className="flex justify-center py-1">
-                    <ArrowDown className="h-5 w-5 text-muted-foreground/40" />
-                  </div>
-                )}
-              </div>
-            ))}
+                );
+              })}
+            </div>
           </div>
         </section>
 
-        {/* Optimizations */}
+        {/* Key Advantages */}
         <section className="section-padding bg-surface-2">
           <div className="container mx-auto px-4">
             <motion.div
@@ -184,7 +224,6 @@ const Workflow = () => {
                 What makes the CNN-SNN hybrid approach production-ready for real-world agricultural deployment.
               </p>
             </motion.div>
-
             <div className="grid md:grid-cols-3 gap-6 max-w-5xl mx-auto">
               {optimizations.map((opt, index) => (
                 <motion.div
@@ -205,6 +244,7 @@ const Workflow = () => {
             </div>
           </div>
         </section>
+
       </main>
       <Footer />
     </div>

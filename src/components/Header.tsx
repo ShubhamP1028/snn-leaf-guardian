@@ -9,6 +9,7 @@ import logo from "@/assets/logo.png";
 const navLinks = [
   { label: "Home", href: "/" },
   { label: "Workflow", href: "/workflow" },
+  { label: "Research", href: "/research" },
   { label: "Disease Library", href: "/diseases" },
   { label: "References", href: "/references" },
   { label: "About Us", href: "/about" },
@@ -66,7 +67,7 @@ export function Header() {
                   className={`px-3 py-2 rounded-lg text-sm font-medium transition-colors ${
                     isActive(link.href)
                       ? "text-accent bg-accent/10"
-                      : "text-muted-foreground hover:text-foreground hover:bg-muted/50"
+                      : "text-muted-foreground hover:text-foreground hover:bg-muted/50 hover:font-bold"
                   }`}
                 >
                   {link.label}
@@ -77,8 +78,8 @@ export function Header() {
                   to={link.href}
                   className={`px-3 py-2 rounded-lg text-sm font-medium transition-colors ${
                     isActive(link.href)
-                      ? "text-accent bg-accent/10"
-                      : "text-muted-foreground hover:text-foreground hover:bg-muted/50"
+                      ? "text-accent bg-accent/10 hover:font-bold"
+                      : "text-muted-foreground hover:text-foreground hover:bg-muted/50 hover:font-bold"
                   }`}
                 >
                   {link.label}
@@ -91,7 +92,7 @@ export function Header() {
           <div className="hidden lg:flex items-center gap-2">
             <ThemeToggle />
             <Link to="/#features">
-              <Button variant="default" size="sm" onClick={() => handleNavClick("/#features")}>
+              <Button variant="default" size="sm" className="hover:font-bold hover:bg-accent/20" onClick={() => handleNavClick("/#features")}>
                 Start Scanning
               </Button>
             </Link>

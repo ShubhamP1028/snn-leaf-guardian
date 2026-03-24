@@ -1,9 +1,21 @@
 import { motion } from "framer-motion";
 import { ArrowRight } from "lucide-react";
+import { useState } from "react";
 import { Button } from "@/components/ui/button";
 import heroBg from "@/assets/hero-bg.jpg";
 
 export function HeroSection() {
+  const [isMenuOpen, setIsMenuOpen] = useState(false);
+  
+  const handleNavClick = (href: string) => {
+    setIsMenuOpen(false);
+    if (href.startsWith("/#")) {
+      const id = href.replace("/#", "");
+      if (location.pathname === "/") {
+        document.getElementById(id)?.scrollIntoView({ behavior: "smooth" });
+      }
+    }
+  };
   return (
     <section className="relative min-h-screen flex items-center overflow-hidden">
       {/* Background Image with Dark Navy Overlay */}
@@ -88,9 +100,9 @@ export function HeroSection() {
             className="flex flex-wrap items-center gap-6"
           >
             
-            <Button variant="hero" size="xl">
+            <Button variant="hero" size="xl" onClick={() => handleNavClick("/#features")}>
               <a
-              href="#features"
+              href="/#features"
               className="text-accent hover:text-accent/80 text-sm font-medium transition-colors"
             >
               Get Started

@@ -74,32 +74,8 @@ const AboutUs = () => {
           </motion.div>
         </section>
 
-        {/* Values */}
+        {/* Team Members — first */}
         <section className="section-padding bg-surface-2">
-          <div className="container mx-auto px-4">
-            <div className="grid md:grid-cols-3 gap-6 max-w-5xl mx-auto">
-              {values.map((value, index) => (
-                <motion.div
-                  key={value.title}
-                  initial={{ opacity: 0, y: 20 }}
-                  whileInView={{ opacity: 1, y: 0 }}
-                  viewport={{ once: true }}
-                  transition={{ duration: 0.5, delay: index * 0.1 }}
-                  className="p-6 rounded-2xl border border-border bg-card text-center"
-                >
-                  <div className="w-14 h-14 rounded-2xl bg-accent/10 flex items-center justify-center mx-auto mb-4">
-                    <value.icon className="h-7 w-7 text-accent" />
-                  </div>
-                  <h3 className="text-lg font-bold text-foreground mb-2">{value.title}</h3>
-                  <p className="text-muted-foreground text-sm">{value.description}</p>
-                </motion.div>
-              ))}
-            </div>
-          </div>
-        </section>
-
-        {/* Team Members */}
-        <section className="section-padding bg-background">
           <div className="container mx-auto px-4">
             <motion.div
               initial={{ opacity: 0, y: 20 }}
@@ -129,36 +105,47 @@ const AboutUs = () => {
                     alt={member.name}
                     className="w-20 h-20 rounded-2xl object-cover mb-5"
                   />
-
                   <h3 className="text-xl font-bold text-foreground mb-1">{member.name}</h3>
                   <p className="text-accent text-sm font-medium mb-3">{member.role}</p>
                   <p className="text-muted-foreground text-sm mb-5">{member.description}</p>
-
-                  {/* Social Links */}
                   <div className="flex gap-3">
-                    <a
-                      href={member.github}
-                      target="_blank"
-                      rel="noopener noreferrer"
-                      className="w-9 h-9 rounded-lg bg-muted flex items-center justify-center text-muted-foreground hover:text-foreground hover:bg-muted/80 transition-all"
-                    >
+                    <a href={member.github} target="_blank" rel="noopener noreferrer"
+                      className="w-9 h-9 rounded-lg bg-muted flex items-center justify-center text-muted-foreground hover:text-foreground hover:bg-muted/80 transition-all">
                       <Github className="h-4 w-4" />
                     </a>
-                    <a
-                      href={member.linkedin}
-                      target="_blank"
-                      rel="noopener noreferrer"
-                      className="w-9 h-9 rounded-lg bg-muted flex items-center justify-center text-muted-foreground hover:text-foreground hover:bg-muted/80 transition-all"
-                    >
+                    <a href={member.linkedin} target="_blank" rel="noopener noreferrer"
+                      className="w-9 h-9 rounded-lg bg-muted flex items-center justify-center text-muted-foreground hover:text-foreground hover:bg-muted/80 transition-all">
                       <Linkedin className="h-4 w-4" />
                     </a>
-                    <a
-                      href={`mailto:${member.email}`}
-                      className="w-9 h-9 rounded-lg bg-muted flex items-center justify-center text-muted-foreground hover:text-foreground hover:bg-muted/80 transition-all"
-                    >
+                    <a href={`mailto:${member.email}`}
+                      className="w-9 h-9 rounded-lg bg-muted flex items-center justify-center text-muted-foreground hover:text-foreground hover:bg-muted/80 transition-all">
                       <Mail className="h-4 w-4" />
                     </a>
                   </div>
+                </motion.div>
+              ))}
+            </div>
+          </div>
+        </section>
+
+        {/* Values */}
+        <section className="section-padding bg-background">
+          <div className="container mx-auto px-4">
+            <div className="grid md:grid-cols-3 gap-6 max-w-5xl mx-auto">
+              {values.map((value, index) => (
+                <motion.div
+                  key={value.title}
+                  initial={{ opacity: 0, y: 20 }}
+                  whileInView={{ opacity: 1, y: 0 }}
+                  viewport={{ once: true }}
+                  transition={{ duration: 0.5, delay: index * 0.1 }}
+                  className="p-6 rounded-2xl border border-border bg-card text-center"
+                >
+                  <div className="w-14 h-14 rounded-2xl bg-accent/10 flex items-center justify-center mx-auto mb-4">
+                    <value.icon className="h-7 w-7 text-accent" />
+                  </div>
+                  <h3 className="text-lg font-bold text-foreground mb-2">{value.title}</h3>
+                  <p className="text-muted-foreground text-sm">{value.description}</p>
                 </motion.div>
               ))}
             </div>

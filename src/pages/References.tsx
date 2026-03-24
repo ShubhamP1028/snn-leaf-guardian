@@ -121,8 +121,8 @@ const References = () => {
 
         {/* Reference Categories */}
         {referenceCategories.map((category, catIndex) => (
-          <section key={category.title} className={`section-padding ${catIndex % 2 === 1 ? "bg-surface-2" : "bg-background"}`}>
-            <div className="container mx-auto px-4">
+          <section key={category.title} className={`section-padding items-center justify-center  ${catIndex % 2 === 1 ? "bg-surface-2" : "bg-background"}`}>
+            <div className="container mx-auto px-4 items-center justify-center">
               <motion.div
                 initial={{ opacity: 0, y: 20 }}
                 whileInView={{ opacity: 1, y: 0 }}
@@ -135,25 +135,31 @@ const References = () => {
                 <h2 className="text-2xl font-bold text-foreground">{category.title}</h2>
               </motion.div>
 
-              <div className="space-y-4 max-w-4xl">
+              <div className={
+                category.title === "Research Papers"
+                  ? "grid md:grid-cols-2 gap-4 max-w-5xl mx-auto"
+                  : category.title === "Frameworks & Tools"
+                  ? "grid md:grid-cols-3 gap-4 max-w-5xl mx-auto"
+                  : "space-y-4 max-w-4xl"
+              }>
                 {category.refs.map((ref, index) => (
                   <motion.div
                     key={ref.title}
-                    initial={{ opacity: 0, x: -20 }}
-                    whileInView={{ opacity: 1, x: 0 }}
+                    initial={{ opacity: 0, y: 16 }}
+                    whileInView={{ opacity: 1, y: 0 }}
                     viewport={{ once: true }}
                     transition={{ duration: 0.4, delay: index * 0.08 }}
-                    className="p-5 rounded-xl border border-border bg-card hover:shadow-sm transition-shadow group"
+                    className="p-5 rounded-xl border border-border bg-card hover:shadow-sm transition-shadow group flex flex-col"
                   >
-                    <div className="flex items-start justify-between gap-4">
-                      <div className="flex-1">
-                        <h3 className="font-bold text-foreground mb-1 group-hover:text-accent transition-colors">
+                    <div className="flex items-start justify-between gap-3 flex-1">
+                      <div className="flex-1 min-w-0">
+                        <h3 className="font-bold text-foreground mb-1 group-hover:text-accent transition-colors leading-snug">
                           {ref.title}
                         </h3>
-                        <p className="text-sm text-muted-foreground mb-1">
+                        <p className="text-sm text-muted-foreground mb-2">
                           <span className="font-medium">{ref.authors}</span> — {ref.venue}
                         </p>
-                        <p className="text-sm text-muted-foreground">{ref.description}</p>
+                        <p className="text-sm text-muted-foreground leading-relaxed">{ref.description}</p>
                       </div>
                       {ref.link !== "#" && (
                         <a
